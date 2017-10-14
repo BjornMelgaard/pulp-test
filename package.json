@@ -1,0 +1,14 @@
+{
+  "private": "true",
+  "dependencies": {
+    "benchmark": "^2.1.0",
+    "microtime": "^2.1.1",
+    "pulp": "^11.0.0"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "watch": "pulp -w build",
+    "build": "pulp build && pulp docs",
+    "test": "mkdir -p tmp && pulp build -I benchmark -O --to tmp/main.js && (echo '*' | node tmp/main.js)"
+  }
+}
